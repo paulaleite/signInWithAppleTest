@@ -36,6 +36,11 @@ extension ViewController: ASAuthorizationControllerDelegate {
         print(error)
     }
     
+    func setUpSignInWithAppleButton() {
+        authorizationButton.addTarget(self, action: #selector(handleAppleIDRequest), for: .touchUpInside)
+        authorizationButton.cornerRadius = 10
+    }
+    
     @objc func handleAppleIDRequest() {
         // This mecanism generates the requisition to authenticate the user based on their Apple ID.
         let appleIDProvider = ASAuthorizationAppleIDProvider()
@@ -46,5 +51,6 @@ extension ViewController: ASAuthorizationControllerDelegate {
         authorizationController.delegate = self
         authorizationController.performRequests()
     }
+    
 }
 
