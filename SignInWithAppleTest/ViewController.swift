@@ -19,6 +19,15 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ASAuthorizationControllerDelegate {
-    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+
+            if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+                let userIdentifier = appleIDCredential.user
+                let fullName = appleIDCredential.fullName
+                let email = appleIDCredential.email
+                print("User ID is \(userIdentifier)\n Full Name is \(String(describing: fullName))\n Email is \(String(describing: email))")
+            
+            }
+    }
 }
 
