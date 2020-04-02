@@ -29,5 +29,9 @@ extension ViewController: ASAuthorizationControllerDelegate {
             
             }
     }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error)
+    }
 }
 
