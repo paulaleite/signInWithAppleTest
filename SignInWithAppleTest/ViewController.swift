@@ -11,6 +11,8 @@ import AuthenticationServices
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var authorizationButton: ASAuthorizationAppleIDButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
